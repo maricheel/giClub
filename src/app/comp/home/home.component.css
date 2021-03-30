@@ -29,6 +29,7 @@ h1 {
 }
 
 .btns {
+  margin-right: 0;
   display: flex;
   justify-content: center;
   justify-content: space-around;
@@ -36,7 +37,7 @@ h1 {
 
 @media screen and (max-width: 480px) {
   .container-fluid {
-    width: 102%;
+    width: 103%;
   }
   h1 {
     font: 2.5em sans-serif;
