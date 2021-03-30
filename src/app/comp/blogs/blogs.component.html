@@ -1,0 +1,34 @@
+
+
+<div class="container blogs">
+
+    <div class="card" style="width: 18rem;" *ngFor="let post of posts | async">
+        <img src="{{post.image}}" class="card-img-top" >
+        <div class="card-body">
+          <h5 class="card-title">{{post.title}}</h5>
+          <p [innerHTML]="post.content.substr(0,60)+'. . .'"> ....</p>
+        
+          <a routerLink="/blogs/{{post.id}}">lire la suite...</a>
+        </div>
+        <div align="end" *ngIf="auth.afAuth.authState | async as user;">
+          <button class="btn light"  (click)="delete(post.id)">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+
+</div>
+
+    
+<div class="row " style="width: 100%;">
+  <div class="col-md-12 " >
+      
+      <div *ngIf="auth.afAuth.authState | async as user">
+       
+        <button routerLink="/addBlog" type="button" class="btn btn-info btn-circle btn-xl pull-right"><i class="fa fa-plus" aria-hidden="true"></i></button>
+
+  </div>
+</div>
+
+
+

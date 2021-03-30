@@ -1,0 +1,11 @@
+.bg-clubnav{
+    background-color: #08084c;
+   }
+   li{
+       font-size:1.25rem;
+       font-weight: bold;
+   }
+   .navbar-brand{
+       font-size:2rem;
+       font-weight: bold;
+   }

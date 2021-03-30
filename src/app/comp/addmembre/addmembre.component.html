@@ -1,0 +1,58 @@
+<div class="row" style="width: 99%;" >
+    <div class="col-md-11">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">New Membre</h4>
+                <form (ngSubmit)="createMbr()" #formClient="ngForm" action="">
+                  
+                    <div class="form-group">
+                        <label for="my-input">Nom complet</label>
+                        <input                   
+                            class="form-control"
+                            type="text"
+                            placeholder="Nom complet" [(ngModel)]="nom" name="nom"    
+                            required
+                            minlength="3"
+                        >
+                      </div> 
+                              
+                  <div class="mb-3">
+                    <label for="formFile" class="form-label">Image</label>
+                    <input class="form-control" type="file" name="file" id="file" (change)="uploadImage($event)">
+                  </div>
+
+                      <div class="form-group">
+                        <label for="my-input">Linkedin</label>
+                        <input                   
+                            class="form-control"
+                            type="text"
+                            placeholder="Nom complet" [(ngModel)]="linkedin" name="linkedin"    
+                            required
+                            minlength="3"
+                        >
+                      </div>
+
+                      <div class="form-group">
+                        <label for="my-input">Github</label>
+                        <input                   
+                            class="form-control"
+                            type="text"
+                            placeholder="Nom complet" [(ngModel)]="github" name="github"    
+                            required
+                            minlength="3"
+                        >
+                      </div>
+
+                <div class="form-group">
+                    <label for="my-input">Paragraphe</label>
+                  <textarea name="" id="" class="form-control" [(ngModel)]="para" name="para"  cols="30" rows="10"></textarea>
+                </div>
+  
+                        <button class="btn btn-primary btn-block" type="submit" [disabled]="!formClient.valid">
+                          submit
+                      </button>
+                </form>
+              </div>
+            </div>
+        </div>
+      </div>

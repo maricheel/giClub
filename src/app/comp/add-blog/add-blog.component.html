@@ -1,0 +1,63 @@
+<div class="row" >
+  <div class="col-md-11">
+      <div class="card">
+          <div class="card-body">
+              <h4 class="card-title">New Post</h4>
+              <form (ngSubmit)="createPost()" #formClient="ngForm" action="">
+                
+                  <div class="form-group">
+                    <label for="my-input">Nom d'auteur</label>
+                    <input                   
+                        class="form-control"
+                        type="text"
+                        placeholder="Nom d'auteur" [(ngModel)]="author" name="author"    
+                        required
+                        minlength="3"
+                    >
+                  </div>
+              
+                <div class="form-group">
+                  <label for="my-input">Titre de Blog</label>
+                  <input                   
+                      class="form-control"
+                      type="text"
+                      placeholder="Titre de Blog" [(ngModel)]="title" name="title" 
+                      required
+                      minlength="3"
+                  >
+                </div>
+
+                        
+                <div class="mb-3">
+                  <label for="formFile" class="form-label">Default file input example</label>
+                  <input class="form-control" type="file" name="file" id="file" (change)="uploadImage($event)">
+                </div>
+                <editor [(ngModel)]="content" name="content"
+                [init]="{
+                  height: 500,
+                  menubar: 'insert',
+                  plugins: [
+                    'advlist autolink lists link image charmap print preview anchor',
+                    'searchreplace visualblocks code fullscreen',
+                    'insertdatetime media table paste code help wordcount',
+                    'image'
+                  ],
+                  toolbar:
+                    'undo redo | formatselect | bold italic backcolor | \
+                    alignleft aligncenter alignright alignjustify | \
+                    bullist numlist outdent indent | removeformat | help|\
+                    image\
+                    '  
+                   
+                }"
+                 ></editor>
+
+
+                      <button class="btn btn-primary btn-block" type="submit" [disabled]="!formClient.valid">
+                        submit
+                    </button>
+              </form>
+            </div>
+          </div>
+      </div>
+    </div>

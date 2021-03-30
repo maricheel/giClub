@@ -1,0 +1,62 @@
+<body>
+
+<section id="team" class="pb-5" > 
+    <div class="container">
+        <h5 class="section-title h1">Nos Membres</h5>
+        <div class="row">
+        
+            <div *ngFor="let membre of membres" class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip" ontouch="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="{{membre.photo}}" alt="card image"></p>
+                                    <h4 class="card-title">{{membre.nom}}</h4>
+                                    <p class="card-text">{{membre.para.substr(0,60)}} ...</p>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-title">{{membre.nom}}</h4>
+                                    <p class="card-text">{{membre.para}}</p>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="{{membre.github}}">
+                                                <i  class="fa fa-github fa-2x"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="{{membre.linkedin}}">
+                                                <i class="fa fa-linkedin fa-2x"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div align="end" *ngIf="auth.afAuth.authState | async as user;">
+                                <button class="btn light"  (click)="delete(membre.id)">
+                                  <i class="fa fa-trash" aria-hidden="true"></i>
+                                </button>
+                              </div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div *ngIf="auth.afAuth.authState | async as user">
+        <button routerLink="/addMembre" type="button" class="btn btn-info btn-circle btn-xl pull-right"><i class="fa fa-plus" aria-hidden="true"></i></button>
+    </div>
+</section>
+    
+</body>
+
+
+    

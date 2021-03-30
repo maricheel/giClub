@@ -1,0 +1,22 @@
+
+<div class="container-fluid">
+    <div class="items">
+        <h1>TALK IS CHEAP. SHOW ME THE</h1>
+           
+                    
+                    <div *ngIf="auth.afAuth.authState | async as user; else showLogin">
+              
+              
+                      <h1  (click)="auth.logout()" >CODE</h1>
+                    </div>
+                    <ng-template #showLogin>
+                      <h1 (click)="auth.login()">CODE*</h1>
+                    </ng-template>
+              
+            
+        <div class="btns">
+            <a class="btn bg-button" target="_blank" href="https://www.facebook.com/bnisham/">facebook</a>
+            <a class="btn bg-button" target="_blank" href="https://www.linkedin.com/in/hicham-el-banaji-9359171ba/">linkedin</a>
+        </div>
+    </div>
+</div>

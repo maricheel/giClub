@@ -1,0 +1,32 @@
+
+ <section class="our-plans">
+    <div class="container">
+       <div class="row text-center">
+          <div class="col-md-12">
+             <h2 class="section-title">Les message</h2>
+          </div>
+       </div>
+
+       <!-- PLANS STARTS -->
+          <div class="row mrt-40">
+
+
+             <div *ngFor="let msg of msgs" class="price-plan">
+                <div class="plan-details">
+                   <h2>{{msg.nom}}</h2>
+                  <p>{{msg.email}}</p>
+                </div>
+                <div class="plan-features">
+                   <ul>
+                     <p>{{msg.msg}}</p>
+                   </ul>
+                </div>
+             
+             </div> 
+             <!--4th ends-->
+
+          </div>   
+          <!-- Plans ends -->
+
+    </div>
+ </section>
