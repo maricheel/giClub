@@ -1,38 +1,49 @@
-.container-fluid{
-    width: 100%;
-    height: 100vh;
-    background: url("../../../assets/home.jpg");
-   
+.container-fluid {
+  width: 100%;
+  height: 100vh;
+  background: url("../../../assets/home.jpg");
 }
-.items{
-    position: absolute;
-    width: 99%;
-    margin-top: 15%;
+.items {
+  position: absolute;
+  width: 99%;
+  margin-top: 15%;
 }
-h1{
-    color: rgb(255, 255, 255);
-    font: 3.5em sans-serif;
-    text-align: center;
-    position: relative;
-    margin-bottom: 8%;
-    font-weight: bold;
-    
+h1 {
+  color: rgb(255, 255, 255);
+  font: 3.5em sans-serif;
+  text-align: center;
+  position: relative;
+  margin-bottom: 8%;
+  font-weight: bold;
 }
-.bg-button{
-    background-color: #0be5ff;
-    color:rgb(255, 255, 255); 
-    font: 2em sans-serif;
-    border-radius: 30px;
-    font-weight: bold;
+.bg-button {
+  background-color: #0be5ff;
+  color: rgb(255, 255, 255);
+  font: 2em sans-serif;
+  border-radius: 30px;
+  font-weight: bold;
 }
-.bg-button:hover{
-    background-color: #23253d;
-    color:rgb(255, 255, 255); 
-   
+.bg-button:hover {
+  background-color: #23253d;
+  color: rgb(255, 255, 255);
 }
 
-.btns{   
-display: flex;
-justify-content: center;
-justify-content: space-around;
+.btns {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+}
+
+@media screen and (max-width: 480px) {
+  .container-fluid {
+    width: 102%;
+  }
+  h1 {
+    font: 2.5em sans-serif;
+  }
+  .bg-button {
+    font: 1.5em sans-serif;
+    border-radius: 15px;
+    font-weight: bold;
+  }
 }
